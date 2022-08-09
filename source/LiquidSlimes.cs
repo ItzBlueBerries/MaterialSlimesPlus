@@ -116,13 +116,16 @@ namespace MaterialSlimesPlus.EX1
             slimeDefinition.Name = "Blood Slime";
             slimeDefinition.IdentifiableId = Ids.LiquidSlimes.BLOOD_SLIME;
             // OBJECT
-            GameObject slimeObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PINK_SLIME));
+            GameObject slimeObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PUDDLE_SLIME));
             slimeObject.name = "slimeBlood";
             slimeObject.GetComponent<PlayWithToys>().slimeDefinition = slimeDefinition;
             slimeObject.GetComponent<SlimeAppearanceApplicator>().SlimeDefinition = slimeDefinition;
             slimeObject.GetComponent<SlimeEat>().slimeDefinition = slimeDefinition;
             slimeObject.GetComponent<Identifiable>().id = Ids.LiquidSlimes.BLOOD_SLIME;
             slimeObject.AddComponent<PuddleSlimeScoot>();
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<GotoWater>());
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<SlimeEatWater>());
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<DestroyOnTouching>());
             // .AddComponent for new components, below with UnityEngine shows how to destroy components, and get them is pretty obvious.
             UnityEngine.Object.Destroy(slimeObject.GetComponent<PinkSlimeFoodTypeTracker>());
             // APPEARANCE
@@ -174,7 +177,8 @@ namespace MaterialSlimesPlus.EX1
             {
                 Top = SlimeColor,
                 Middle = SlimeColor,
-                Bottom = SlimeColor
+                Bottom = SlimeColor,
+                Ammo = SlimeColor
             };
             PediaRegistry.RegisterIdEntry(Ids.LiquidSlimes.BLOOD_SLIME_ENTRY, OtherFunc.MSPCreateSprite(OtherFunc.MSPLoadImage("assets.liquid.liquid_blood.png")));
             slimeObject.GetComponent<SlimeAppearanceApplicator>().Appearance = slimeAppearance;
@@ -212,13 +216,16 @@ namespace MaterialSlimesPlus.EX1
             slimeDefinition.Name = "Infected Blood Slime";
             slimeDefinition.IdentifiableId = Ids.LiquidSlimes.INFECTED_BLOOD_SLIME;
             // OBJECT
-            GameObject slimeObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PINK_SLIME));
+            GameObject slimeObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PUDDLE_SLIME));
             slimeObject.name = "slimeInfectedBlood";
             slimeObject.GetComponent<PlayWithToys>().slimeDefinition = slimeDefinition;
             slimeObject.GetComponent<SlimeAppearanceApplicator>().SlimeDefinition = slimeDefinition;
             slimeObject.GetComponent<SlimeEat>().slimeDefinition = slimeDefinition;
             slimeObject.GetComponent<Identifiable>().id = Ids.LiquidSlimes.INFECTED_BLOOD_SLIME;
             slimeObject.AddComponent<PuddleSlimeScoot>();
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<GotoWater>());
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<SlimeEatWater>());
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<DestroyOnTouching>());
             // .AddComponent for new components, below with UnityEngine shows how to destroy components, and get them is pretty obvious.
             UnityEngine.Object.Destroy(slimeObject.GetComponent<PinkSlimeFoodTypeTracker>());
             // APPEARANCE
@@ -270,7 +277,8 @@ namespace MaterialSlimesPlus.EX1
             {
                 Top = SlimeColor,
                 Middle = SlimeColor,
-                Bottom = SlimeColor
+                Bottom = SlimeColor,
+                Ammo = SlimeColor
             };
             PediaRegistry.RegisterIdEntry(Ids.LiquidSlimes.INFECTED_BLOOD_SLIME_ENTRY, OtherFunc.MSPCreateSprite(OtherFunc.MSPLoadImage("assets.liquid.liquid_infected_blood.png")));
             slimeObject.GetComponent<SlimeAppearanceApplicator>().Appearance = slimeAppearance;
@@ -309,13 +317,16 @@ namespace MaterialSlimesPlus.EX1
             slimeDefinition.Name = "Oil Slime";
             slimeDefinition.IdentifiableId = Ids.LiquidSlimes.OIL_SLIME;
             // OBJECT
-            GameObject slimeObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PINK_SLIME));
+            GameObject slimeObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PUDDLE_SLIME));
             slimeObject.name = "slimeOil";
             slimeObject.GetComponent<PlayWithToys>().slimeDefinition = slimeDefinition;
             slimeObject.GetComponent<SlimeAppearanceApplicator>().SlimeDefinition = slimeDefinition;
             slimeObject.GetComponent<SlimeEat>().slimeDefinition = slimeDefinition;
             slimeObject.GetComponent<Identifiable>().id = Ids.LiquidSlimes.OIL_SLIME;
             slimeObject.AddComponent<PuddleSlimeScoot>();
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<GotoWater>());
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<SlimeEatWater>());
+            UnityEngine.Object.Destroy(slimeObject.GetComponent<DestroyOnTouching>());
             /*slimeObject.AddComponent<FeralizeOnLargoTransformed>();
             slimeObject.AddComponent<GotoPlayer>();
             slimeObject.AddComponent<AttackPlayer>();*/
@@ -370,7 +381,8 @@ namespace MaterialSlimesPlus.EX1
             {
                 Top = SlimeColor,
                 Middle = SlimeColor,
-                Bottom = SlimeColor
+                Bottom = SlimeColor,
+                Ammo = SlimeColor
             };
             PediaRegistry.RegisterIdEntry(Ids.LiquidSlimes.OIL_SLIME_ENTRY, OtherFunc.MSPCreateSprite(OtherFunc.MSPLoadImage("assets.liquid.liquid_oil.png")));
             slimeObject.GetComponent<SlimeAppearanceApplicator>().Appearance = slimeAppearance;

@@ -36,16 +36,10 @@ namespace MaterialSlimesPlus
         public override void PostLoad()
         {
             if (SRModLoader.IsModPresent("materialslimesog"))
-                SRML.Console.Console.LogSuccess("[MATERIAL_SLIMES_PLUS+] Loaded MaterialSlimesPlus+ Successfully.");
+                ConsoleInstance.LogSuccess("Loaded MaterialSlimesPlus+ Successfully.");
             else
-                SRML.Console.Console.LogError("[MATERIAL_SLIMES_PLUS+] Didn't load MaterialSlimesPlus+ Successfully. (Is Material Slimes installed?)");
+                ConsoleInstance.LogSuccess("Didn't load MaterialSlimesPlus+ Successfully. (Is Material Slimes installed?)");
             LoadExtensions.PostloadEx();
-            /*SlimeDefinition largoDefinition = SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(largoIds.LiquidSlimes.MEGA_OIL_LARGO);
-            foreach (Identifiable.Id produces in largoDefinition.Diet.Produces)
-                SRML.Console.Console.Log(produces.ToString());*/
-            /*GameObject gadgetObject = PrefabUtils.CopyPrefab(SRSingleton<GameContext>.Instance.LookupDirector.GetGadgetDefinition(gadgetIds.LiquidSlimes.OIL_EXCHANGER_BASIC).prefab);
-            foreach (Transform childs in gadgetObject.transform.Find("ext_pump23"))
-                SRML.Console.Console.Log(childs.ToString());*/
         }
 
     }

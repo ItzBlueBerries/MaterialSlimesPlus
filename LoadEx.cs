@@ -290,7 +290,7 @@ namespace MaterialSlimesPlus.EX
             list.Add(item); //Add your custom 'Extractor.ProduceEntry' to the list
             component.produces = list.ToArray(); //Set the new list
 
-            DecomposingFluids.LoadDecomposingFluids(); 
+            DecomposingFluids.LoadDecomposingFluids();
         }
     }
 }

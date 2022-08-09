@@ -3,9 +3,8 @@
   "name": "Material Slimes Plus+",
   "author": "FruitsyOG",
   "description": "An extension to Material Slimes, really just developed when nothing else is needed to be done.",
-  "version": "1.0",
+  "version": "1.0.1",
   "load_after": [
-    "materialslimesog",
-    "largolibrary"
+    "materialslimesog"
   ]
 }
